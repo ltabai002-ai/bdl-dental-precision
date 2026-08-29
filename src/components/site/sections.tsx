@@ -400,14 +400,14 @@ export function GalleryGrid({ heading = true }: { heading?: boolean }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={GALLERY[active].title}
+          aria-label={GALLERY[active]!.title}
           className="fixed inset-0 z-[70] flex items-center justify-center bg-navy-deep/95 p-4"
           onClick={() => setActive(null)}
         >
           <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-            <MediaSlot tone="dark" ratio="16 / 10" label={GALLERY[active].media} />
+            <MediaSlot tone="dark" ratio="16 / 10" label={GALLERY[active]!.media} />
             <p className="mt-4 text-center font-display text-base font-semibold text-white">
-              {GALLERY[active].title}
+              {GALLERY[active]!.title}
             </p>
             <div className="mt-4 flex items-center justify-center gap-3">
               <button
@@ -509,7 +509,7 @@ export function AreasServed() {
 
 export function Testimonials() {
   const [i, setI] = useState(0);
-  const t = TESTIMONIALS[i];
+  const t = TESTIMONIALS[i]!;
   return (
     <section className="section-y bg-navy-deep text-white">
       <div className="container-page">
